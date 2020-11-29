@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoadOrNewPage</class>
+ <widget class="QWizardPage" name="LoadOrNewPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>203</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Load or Design New List</string>
+  </property>
+  <property name="title">
+   <string>Load or Design New List</string>
+  </property>
+  <property name="subTitle">
+   <string/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Select from the following choices</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QRadioButton" name="radioButton_load">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Load previously saved primer pair/probe list</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_new">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Start designing new primer pairs</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>radioButton_load</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadOrNewPage</receiver>
+   <slot>loadPrev()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>62</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_new</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadOrNewPage</receiver>
+   <slot>designNew()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>loadPrev()</slot>
+  <slot>designNew()</slot>
+ </slots>
+</ui>

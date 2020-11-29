@@ -1,0 +1,54 @@
+>Seed sequence|JY-1_M13R_B01_013.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_C03_027.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_C04_028.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_D03_025.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_E05_039.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_G04_020.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_H02_002.ab1_(reversed) 
+
+>Seed sequence|JY-1_M13R_H04_018.ab1_(reversed) 
+
+>Seed sequence|JY-Replant#3_M13R_F02_006.ab1_(reversed) 
+
+>Seed sequence|JY_REPLANT_2_M13R_G09_067.ab1_(reversed) 
+
+>Seed sequence|JY_REPLANT_2_M13R_H09_065.ab1_(reversed) 
+
+>gi|323302068|gb|HQ643805.1|Pythium sp. CAL_2011f voucher DAOM229155 18S ribosomal RNA gene,            partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA            gene, and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|51235571|gb|AY598717.1|Pythium violae strain CBS 132.37 internal transcribed spacer 1,            5.8S ribosomal RNA gene, and internal transcribed spacer 2,            complete sequence; and large subunit ribosomal RNA gene, partial            sequence.
+
+>gi|323302064|gb|HQ643801.1|Pythium sp. CAL_2011f voucher Lev2168 18S ribosomal RNA gene,            partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA            gene, and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|323301425|gb|HQ643128.1|Brevilegnia macrospora voucher CBS13237 18S ribosomal RNA gene,            partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA            gene, and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|323301787|gb|HQ643519.1|Pythium debaryanum voucher CBS75296 18S ribosomal RNA gene, partial            sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene,            and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|323302065|gb|HQ643802.1|Pythium sp. CAL_2011f voucher Lev2156 18S ribosomal RNA gene,            partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA            gene, and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|323302219|gb|HQ643956.1|Pythium viniferum voucher CBS119168 18S ribosomal RNA gene, partial            sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene,            and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|105301047|dbj|AB217669.1|Pythium violae gene for internal transcribed spacer 1, 5.8S rRNA,            internal transcribed spacer 2, complete sequence, strain: OPy4.
+
+>gi|6468690|emb|AJ233463.1|Pythium violae ITS1, 5.8S rRNA gene and ITS2, strain OPy6.
+
+>gi|237784548|gb|FJ415937.1|Pythium sp. PPRI8614 internal transcribed spacer 1, partial            sequence; 5.8S ribosomal RNA gene, complete sequence; and internal            transcribed spacer 2, partial sequence.
+
+>gi|51235558|gb|AY598704.1|Pythium debaryanum strain CBS 752.96 internal transcribed spacer 1,            5.8S ribosomal RNA gene, and internal transcribed spacer 2,            complete sequence.
+
+>gi|38373211|gb|AY455694.1|Pythium viniferum strain F-1201 internal transcribed spacer 1, 5.8S            ribosomal RNA gene, and internal transcribed spacer 2, complete            sequence.
+
+>gi|323301947|gb|HQ643681.1|Pythium lucens voucher CBS113342 18S ribosomal RNA gene, partial            sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene,            and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+>gi|323302090|gb|HQ643827.1|Pythium sp. CAL_2011f voucher ADC9982 18S ribosomal RNA gene,            partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA            gene, and internal transcribed spacer 2, complete sequence; and 25S            ribosomal RNA gene, partial sequence.
+
+
+
+
+

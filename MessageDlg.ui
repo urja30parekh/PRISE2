@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MessageDlg</class>
+ <widget class="QDialog" name="MessageDlg">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Report</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="buttonSaveLog">
+     <property name="text">
+      <string>Save Report</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="5">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QTextEdit" name="MessageTextArea">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="lineWrapMode">
+        <enum>QTextEdit::NoWrap</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="4">
+    <widget class="QPushButton" name="buttonCancel">
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QPushButton" name="buttonOK">
+     <property name="text">
+      <string>OK</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="buttonRestart">
+     <property name="text">
+      <string>Change Criteria</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonOK</sender>
+   <signal>clicked()</signal>
+   <receiver>MessageDlg</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>496</x>
+     <y>640</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>623</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSaveLog</sender>
+   <signal>clicked()</signal>
+   <receiver>MessageDlg</receiver>
+   <slot>saveLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>640</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>626</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRestart</sender>
+   <signal>clicked()</signal>
+   <receiver>MessageDlg</receiver>
+   <slot>redesign()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>646</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>MessageDlg</receiver>
+   <slot>cancel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>630</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>626</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>saveLog()</slot>
+  <slot>redesign()</slot>
+  <slot>cancel()</slot>
+ </slots>
+</ui>

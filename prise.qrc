@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/instructions">
+        <file>PRISE_Manual.pdf</file>
+        <file>PRISE_Tutorial.pdf</file>
+        <file>Step_1.1_Instructions.pdf</file>
+    </qresource>
+</RCC>

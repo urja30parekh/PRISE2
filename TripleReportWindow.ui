@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TripleReportWindow</class>
+ <widget class="QMainWindow" name="TripleReportWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1068</width>
+    <height>615</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1068</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_Triple_List_Triple_File"/>
+    <addaction name="actionSave_Triple_List_as_Tab_Delimited_File_Excel"/>
+    <addaction name="actionSave_Triple_Information_Window_Content"/>
+    <addaction name="actionSave_Triples_Only"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHide_Display">
+    <property name="title">
+     <string>Hide/Display</string>
+    </property>
+    <addaction name="actionDisplay_all_columns"/>
+    <addaction name="actionHide_Display_columns"/>
+    <addaction name="actionHide_Display_triples"/>
+   </widget>
+   <widget class="QMenu" name="menuSort">
+    <property name="title">
+     <string>Sort</string>
+    </property>
+    <addaction name="actionSort_Triple_List"/>
+   </widget>
+   <widget class="QMenu" name="menuAdd_Delete">
+    <property name="title">
+     <string>Add/Delete</string>
+    </property>
+    <addaction name="actionAdd_Triple_Manually"/>
+    <addaction name="actionDelete_Triples_Conditionally"/>
+    <addaction name="actionDelete_Marked_Triples"/>
+    <addaction name="actionDelete_Seleted_Triples"/>
+   </widget>
+   <widget class="QMenu" name="menuMark_Unmark">
+    <property name="title">
+     <string>Mark/Unmark</string>
+    </property>
+    <addaction name="actionMark_Selected_Triples"/>
+    <addaction name="actionUnmark_Selected_Triples"/>
+   </widget>
+   <widget class="QMenu" name="menuAnnealing_Info">
+    <property name="title">
+     <string>Annealing Info</string>
+    </property>
+    <addaction name="actionTriple_Annealing_Position_Information"/>
+    <addaction name="actionPercentage_of_Each_Nucleotide_in_Target_and_Non_Target_Sequences_in_Relation_to_Triple_Sequences"/>
+    <addaction name="actionTarget_Sequences_Annealing_with_Triple"/>
+    <addaction name="actionTarget_Sequences_Not_Annealing_with_Triple"/>
+    <addaction name="actionNon_target_Sequences_Annealing_with_Triple"/>
+    <addaction name="actionNon_target_Sequences_Not_Annealing_with_Triple"/>
+   </widget>
+   <widget class="QMenu" name="menuProbe_Complementarity">
+    <property name="title">
+     <string>Complementarity</string>
+    </property>
+    <addaction name="actionProbe_Intra_Complementarity"/>
+    <addaction name="actionTriple_Inter_Complementarity"/>
+   </widget>
+   <widget class="QMenu" name="menuInstant_BLAST">
+    <property name="title">
+     <string>Instant BLAST</string>
+    </property>
+    <addaction name="actionBlast_Probe"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionPRISE_Manual"/>
+    <addaction name="actionPRISE_Tutorial"/>
+   </widget>
+   <widget class="QMenu" name="menuShow_Primer_Pair_Info">
+    <property name="title">
+     <string>Primer Pair</string>
+    </property>
+    <addaction name="actionShow_PrimerPair_Info"/>
+   </widget>
+   <widget class="QMenu" name="menuProbe_Setting">
+    <property name="title">
+     <string>Probe Setting</string>
+    </property>
+    <addaction name="actionView_Probe_Design_Setting"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHide_Display"/>
+   <addaction name="menuSort"/>
+   <addaction name="menuAdd_Delete"/>
+   <addaction name="menuMark_Unmark"/>
+   <addaction name="menuAnnealing_Info"/>
+   <addaction name="menuProbe_Complementarity"/>
+   <addaction name="menuShow_Primer_Pair_Info"/>
+   <addaction name="menuProbe_Setting"/>
+   <addaction name="menuInstant_BLAST"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLoad_Triple_List_Triple_File">
+   <property name="text">
+    <string>Load Primer-Probe Set List (.ppset File)</string>
+   </property>
+  </action>
+  <action name="actionSave_Triple_List_Triple_File">
+   <property name="text">
+    <string>Save Primer-Probe Set List (.ppset File)</string>
+   </property>
+  </action>
+  <action name="actionSave_Triple_List_as_Tab_Delimited_File_Excel">
+   <property name="text">
+    <string>Save Primer-Probe Set List as Tab Delimited File (Excel)</string>
+   </property>
+  </action>
+  <action name="actionSave_Triple_Information_Window_Content">
+   <property name="text">
+    <string>Save Information Window Content</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionDisplay_all_columns">
+   <property name="text">
+    <string>Display All Columns</string>
+   </property>
+  </action>
+  <action name="actionHide_Display_columns">
+   <property name="text">
+    <string>Hide/Display Columns</string>
+   </property>
+  </action>
+  <action name="actionHide_Display_triples">
+   <property name="text">
+    <string>Hide/Display Primer-Probe Sets</string>
+   </property>
+  </action>
+  <action name="actionSort_Triple_List">
+   <property name="text">
+    <string>Sort Primer-Probe Set List</string>
+   </property>
+  </action>
+  <action name="actionAdd_Triple_Manually">
+   <property name="text">
+    <string>Add Primer-Probe Sets Manually</string>
+   </property>
+  </action>
+  <action name="actionDelete_Triples_Conditionally">
+   <property name="text">
+    <string>Delete Primer-Probe Sets Conditionally</string>
+   </property>
+  </action>
+  <action name="actionDelete_Marked_Triples">
+   <property name="text">
+    <string>Delete Marked Primer-Probe Sets</string>
+   </property>
+  </action>
+  <action name="actionDelete_Seleted_Triples">
+   <property name="text">
+    <string>Delete Seleted Primer-Probe Sets</string>
+   </property>
+  </action>
+  <action name="actionMark_Selected_Triples">
+   <property name="text">
+    <string>Mark Selected Primer-Probe Sets</string>
+   </property>
+   <property name="toolTip">
+    <string>Mark Selected Triples</string>
+   </property>
+  </action>
+  <action name="actionUnmark_Selected_Triples">
+   <property name="text">
+    <string>Unmark Selected Primer-Probe Sets</string>
+   </property>
+   <property name="toolTip">
+    <string>Unmark Selected Primer-Probe Sets</string>
+   </property>
+  </action>
+  <action name="actionTriple_Annealing_Position_Information">
+   <property name="text">
+    <string>Primer-Probe Set Annealing Position Information</string>
+   </property>
+  </action>
+  <action name="actionPercentage_of_Each_Nucleotide_in_Target_and_Non_Target_Sequences_in_Relation_to_Triple_Sequences">
+   <property name="text">
+    <string>Percentage of Each Nucleotide in Target and Non-target Sequences in Relation to Primers and Probe Sequences</string>
+   </property>
+  </action>
+  <action name="actionTarget_Sequences_Annealing_with_Triple">
+   <property name="text">
+    <string>Target Sequences Annealing with Primer-Probe Set</string>
+   </property>
+  </action>
+  <action name="actionTarget_Sequences_Not_Annealing_with_Triple">
+   <property name="text">
+    <string>Target Sequences Not Annealing with Primer-Probe Set</string>
+   </property>
+  </action>
+  <action name="actionNon_target_Sequences_Annealing_with_Triple">
+   <property name="text">
+    <string>Non-target Sequences Annealing with Primer-Probe Set</string>
+   </property>
+  </action>
+  <action name="actionNon_target_Sequences_Not_Annealing_with_Triple">
+   <property name="text">
+    <string>Non-target Sequences Not Annealing with Primer-Probe Set</string>
+   </property>
+  </action>
+  <action name="actionProbe_Intra_Complementarity">
+   <property name="text">
+    <string>Probe Intra-Complementarity</string>
+   </property>
+  </action>
+  <action name="actionSave_Triples_Only">
+   <property name="text">
+    <string>Save Primer Pair and Probe Seqs Only</string>
+   </property>
+  </action>
+  <action name="actionShow_PrimerPair_Info">
+   <property name="text">
+    <string>Show Primer Pair Info</string>
+   </property>
+  </action>
+  <action name="actionProbe_3_Intra_Complementarity">
+   <property name="text">
+    <string>Probe 3' Intra-Complementarity</string>
+   </property>
+  </action>
+  <action name="actionTriple_Inter_Complementarity">
+   <property name="text">
+    <string>Primer-Probe Set Inter-Complementarity</string>
+   </property>
+  </action>
+  <action name="actionTriple_3_Inter_Complementarity">
+   <property name="text">
+    <string>Primer-Probe Sets 3' Inter-Complementarity</string>
+   </property>
+  </action>
+  <action name="actionView_Probe_Design_Setting">
+   <property name="text">
+    <string>View Probe Design Setting</string>
+   </property>
+  </action>
+  <action name="actionBlast_Probe">
+   <property name="text">
+    <string>Blast Probe</string>
+   </property>
+  </action>
+  <action name="actionPRISE_Manual">
+   <property name="text">
+    <string>PRISE2 Manual</string>
+   </property>
+  </action>
+  <action name="actionPRISE_Tutorial">
+   <property name="text">
+    <string>PRISE2 Tutorial</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>tabCloseRequested(int)</signal>
+   <receiver>TripleReportWindow</receiver>
+   <slot>closeTab(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>click(QModelIndex)</slot>
+  <slot>rightClick(QPoint)</slot>
+  <slot>closeTab(int)</slot>
+ </slots>
+</ui>

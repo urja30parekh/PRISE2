@@ -1,0 +1,14 @@
+# BLASTN 2.2.29+
+# Query: PochoniaSeed
+# Database: human_genomic
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 8 hits found
+PochoniaSeed	gi|42412614|gb|CH003497.1|	88.89	45	5	0	180	224	175364405	175364361	0.017	50.1
+PochoniaSeed	gi|42412614|gb|CH003497.1|	88.89	45	5	0	180	224	175426722	175426766	0.017	50.1
+PochoniaSeed	gi|528476567|ref|NC_018927.2|	86.67	45	6	0	180	224	35304038	35304082	4.1	42.1
+PochoniaSeed	gi|528473581|ref|NW_004929400.1|	86.67	45	6	0	180	224	35244038	35244082	4.1	42.1
+PochoniaSeed	gi|206583724|gb|CM000506.1|	86.67	45	6	0	180	224	30436401	30436445	4.1	42.1
+PochoniaSeed	gi|224514941|ref|NT_010393.16|	86.67	45	6	0	180	224	33905458	33905502	4.1	42.1
+PochoniaSeed	gi|224589807|ref|NC_000016.9|	86.67	45	6	0	180	224	33965458	33965502	4.1	42.1
+PochoniaSeed	gi|157713457|ref|AC_000148.1|	86.67	45	6	0	180	224	30436153	30436197	4.1	42.1
+# BLAST processed 1 queries

@@ -1,0 +1,7 @@
+# BLASTN 2.2.17 (Jun-24-2007)
+# Query:  
+# Database: nr
+# Fields: query id, subject ids, % identity, alignment length, mismatches, gap opens, q. start, q. end, s. start, s. end, evalue, bit score
+# 508 hits found
+1	gi|27884304|dbj|AB100362.1|	99.60	499	2	0	1	499	1769	2267	0.0	 911
+

@@ -1,0 +1,29 @@
+How to use Git(review):
+
+How to get the code from Github:
+On the terminal, do the following:
+
+mkdir PRISE
+cd PRISE
+git init
+git remote add origin https://github.com/danieljktan/PRISE
+git pull origin master
+
+
+How to upload code:
+On the terminal, do the following:
+git add .                          #adds all changes
+git commit -m "this is a description of the changes made" #describe changes made
+git push -u origin master
+
+
+
+How to create and move to the new branch:
+git branch <my_branch_name>
+git checkout <my_branch_name>
+
+
+
+
+
+
