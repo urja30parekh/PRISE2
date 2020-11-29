@@ -1,0 +1,2 @@
+# PRISE2
+PRISE2 (PRImer Selector2) is a software package,that streamlines the design of sequence-selective PCR primers and probes. It was originally developed to facilitate examinations of microbial communities via rRNA gene analysis, but it is designed to be useful for any other application where sequence-selective PCR primers are needed. PRISE2 includes an intuitive and easy to use graphical interface, is easy to install, and runs on windows, macintosh and linux machines.
