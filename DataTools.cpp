@@ -629,6 +629,7 @@ int DataTools::SearchNCBI()
 //                headers.push_back(header);
 //            }
             DataTools::saveSeqList2TXT("/Users/ianbonafede/Downloads/Save_Downloaded_Seq.txt",sList, headers);
+            //This saves the downloaded sequences.
 
 
 
