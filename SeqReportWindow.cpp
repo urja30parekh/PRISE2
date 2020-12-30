@@ -636,51 +636,13 @@ void SeqReportWindow::on_actionMove_Marked_Sequences_to_FASTA_Sequence_Box_trigg
             pDlg.setValue(nMarks);
             QString seqStr;
             tools::seqInt2Str(sList[i]->seqInt, sList[i]->length, seqStr);
-//             if (DataTools::isrev) {
-//                std::string DNAseq = seqStr.toLocal8Bit().constData();
-
-//                reverse(DNAseq.begin(), DNAseq.end());
-//                for (std::size_t i = 0; i < DNAseq.length(); ++i){
-//                    switch (DNAseq[i]){
-//                    case 'A':
-//                        DNAseq[i] = 'T';
-//                        break;
-//                    case 'C':
-//                        DNAseq[i] = 'G';
-//                        break;
-//                    case 'G':
-//                        DNAseq[i] = 'C';
-//                        break;
-//                    case 'T':
-//                        DNAseq[i] = 'A';
-//                        break;
-//                    }
-
-//                }
-//                qs = QString::fromLocal8Bit(DNAseq.c_str());
-//           }
             FASTAContent += "original sequence";
             FASTAContent += seqStr;
             FASTAContent += '\n';
             std::string DNAseq = seqStr.toStdString().c_str();
-                reverse(DNAseq.begin(), DNAseq.end());
+            DNAseq = DataTools::doReverseComplement(DNAseq);
 
-                for (std::size_t i = 0; i < DNAseq.length(); ++i){
-                    switch (DNAseq[i]){
-                    case 'A':
-                        DNAseq[i] = 'T';
-                        break;
-                    case 'C':
-                        DNAseq[i] = 'G';
-                        break;
-                    case 'G':
-                        DNAseq[i] = 'C';
-                        break;
-                    case 'T':
-                        DNAseq[i] = 'A';
-                        break;
-                    }
-                }
+
             qs = QString::fromStdString(DNAseq.c_str());
             FASTAContent += '>' + sList[i]->accession + ' ' + this->removeDuplicateSpaces(sList[i]->definition) + '\n';
             FASTAContent += qs +='\n';

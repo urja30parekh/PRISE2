@@ -25,6 +25,13 @@
 #include <QSslSocket>
 #include <cstdlib>
 #include <ctime>
+// urja
+//#include <QtGlobal>
+
+// urja
+// This is declaration of global variable
+//extern bool isrev;
+
 class PrimerReportWindow;
 
 class DataTools: public QObject
@@ -34,7 +41,6 @@ public:
     DataTools();
     ~DataTools();
     static int a;
-//    static bool isrev;
 
     static qint64 lastNCBIRequestTime;
 /****************************************************************************************/
@@ -63,6 +69,7 @@ public :
     static void saveSeqList2TXT(QString filename, QVector<struct SequenceList*>saveList, QStringList headers);
     static void saveFASTASeqListAs(QString filename, QString FASTAContent);
     static void appendFASTASeqListTo(QString filename, QString FASTAContent);
+    static std::string doReverseComplement(std::string);
 
     static inline void registerOnInsertData(   // The register function,
             void (*func)(struct SequenceList* seqPt)){        // take one argument, a function pointer

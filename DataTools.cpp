@@ -620,7 +620,7 @@ int DataTools::SearchNCBI()
 
 //            int rows = std::extent<decltype(sList), 0>::value;
 //            int cols = std::extent<decltype(sList), 1>::value;
-            QString str = "Number, Accession Number, % Identity, Length, Definition, Organism";
+            QString str = "Number, Accession Number, s_start, s_end, % Identity, Length, Definition, Organism";
 
 
             QStringList headers = str.split(",");
@@ -988,7 +988,7 @@ int DataTools::assignSeq(struct SequenceList* seqPtr, QHash<QString, QString> ha
     int retrievedLength = getLengthInfo(hashInfo);
 
     if ( retrievedLength <=0 ){
-        QMessageBox::about(Q_NULLPTR,tr("data Error "), tr("Cannot parse information from NCBI: length"));
+//        QMessageBox::about(Q_NULLPTR,tr("data Error "), tr("Cannot parse information from NCBI: length"));
         return -2;
     }else if( !downloadAllSeqs && seqPtr->length > MAX_SEQUENCE_DOWNLOAD){
         return 2;
@@ -1037,7 +1037,13 @@ int DataTools::assignSeq(struct SequenceList* seqPtr, QHash<QString, QString> ha
         }
     }
     seqPtr->seqInt = seq2int;
+
+    // urja
+    // isrev is a declared as a global variable in the header file
+    // we are initializing "isrev" variable with reverseComplement variable stored in seqPtr
+    // and we are utilizing that variable to ensure that we do reverse and complement when it is actually required
 //    isrev = seqPtr->reverseComplement;
+
     if (seqPtr->reverseComplement) {
        /* // Reverse
         for (int i = 0; i < seq.length()/2; i++) {
@@ -1051,27 +1057,38 @@ int DataTools::assignSeq(struct SequenceList* seqPtr, QHash<QString, QString> ha
         std::cout << "Accession Number : " << seqPtr->accession.toStdString() << std::endl;
 
         std::string DNAseq = seq.toStdString();
-            reverse(DNAseq.begin(), DNAseq.end());
-            for (std::size_t i = 0; i < DNAseq.length(); ++i){
-                switch (DNAseq[i]){
-                case 'A':
-                    DNAseq[i] = 'T';
-                    break;
-                case 'C':
-                    DNAseq[i] = 'G';
-                    break;
-                case 'G':
-                    DNAseq[i] = 'C';
-                    break;
-                case 'T':
-                    DNAseq[i] = 'A';
-                    break;
-                }
-            }
+        DNAseq = DataTools::doReverseComplement(DNAseq);
             std::cout << "reverse complement : " << DNAseq << std::endl;
         }
 
     return 0;
+}
+
+string DataTools::doReverseComplement(string DNAseq){
+    //urja
+    // the check to ensure that rev/comp is done only when required is here
+    // if isrev flag is enabled then we perform reverse and complement
+//    if (isrev) {
+        reverse(DNAseq.begin(), DNAseq.end());
+        for (std::size_t i = 0; i < DNAseq.length(); ++i){
+            switch (DNAseq[i]){
+            case 'A':
+                DNAseq[i] = 'T';
+                break;
+            case 'C':
+                DNAseq[i] = 'G';
+                break;
+            case 'G':
+                DNAseq[i] = 'C';
+                break;
+            case 'T':
+                DNAseq[i] = 'A';
+                break;
+            }
+        }
+        //urja
+//    }
+    return DNAseq;
 }
 
 bool DataTools::loadSeed(QString SeedAccs, QString SeedFile)
@@ -1558,7 +1575,7 @@ void DataTools::saveSeqList2TXT(QString filename, QVector<struct SequenceList*>s
     struct SequenceList* seqPtr;
     for( int i = 0; i < saveList.size(); i++ ){
         seqPtr = saveList[i];
-        out << endl << i+1 << "\t" << seqPtr->accession;
+        out << endl << i+1 << "\t" << seqPtr->accession << "\t" << saveList[i]->start << "\t" << saveList[i]->end;
         for( int j = 0; j < qList.size(); j++ ){
             if( seqPtr->identity[j] > TINY_IDENTITY_VALUE )
                 out << "\t" << seqPtr->identity[j] << "%";
@@ -1569,10 +1586,48 @@ void DataTools::saveSeqList2TXT(QString filename, QVector<struct SequenceList*>s
         if( !isSimple )
             out << "\t" << seqPtr->source << "\t" << seqPtr->features
                     << "\t" << seqPtr->authors << "\t" << seqPtr->title;
+
+
+    int seqStart = seqPtr->start;
+
+    int seqEnd = seqPtr->end;
+
+
+    // We use this tolerated length to determine if enough of the end sequence got read.
+    // For this tolerated length, it is assuming the start + inclusion will be successful.
+    int fudgeTol = 25;
+    int fudgeInc = 25;
+    int maxSeedLen = 100;
+    int toleratedLen = maxSeedLen - fudgeTol - fudgeInc;
+
+    seqStart -= fudgeInc;
+    seqEnd += fudgeInc;
+
+
+    if (seqStart < 1 && seqStart >= (-fudgeTol - fudgeInc + 1)) {
+        // We are before the start of the sequence, but there's enough in here to still include it.
+        toleratedLen = -seqStart + 1;
+        seqStart = 1;
+    }
+
+    QString NCBI_URL =
+            QString("https://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"
+                    "rettype=gb"
+                    "&retmode=txt"
+                    "&db=nucleotide"
+                    "&id=%1"
+                    "&seq_start=%2"
+                    "&seq_stop=%3")
+                    .arg(seqPtr->accession)
+                    .arg(seqStart)
+                    .arg(seqEnd);
+
+    out << "\n" << "\n" << DataTools::getSequence(NCBI_URL) << "\n";
     }
 
     file.close();
-    QMessageBox::about(Q_NULLPTR, "File saved", QString("%1 sequences were saved to .txt file: %2").arg(saveList.size()).arg(filename));
+//    QMessageBox::about(Q_NULLPTR, "File saved", QString("%1 sequences were saved to .txt file: %2").arg(saveList.size()).arg(filename));
+
 }
 
 void DataTools::saveFASTASeqListAs(QString filename, QString FASTAContent)
